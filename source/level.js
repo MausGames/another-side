@@ -281,7 +281,7 @@ cLevel[LVL].pFunction = function(aBlock)
 // - added blocks to accomplish the path
 // - tried to block every "wrong" path
 // - did some corrections to remove clustering blocks
-// - there are two champers in the corners preventing players from escape
+// - there are two chambers in the corners preventing players from escape
 LVL = 4;
 
 cLevel[LVL].aiValue =

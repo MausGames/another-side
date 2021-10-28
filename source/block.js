@@ -58,8 +58,8 @@ Move()
 {
     if(this.m_bActive)
     {
-        this.m_fFade   += Math.max(this.m_fFadeMove - 0.7 * (vec2.len(this.m_vPosition) - 0.2) - 0.8 * (0.5 + 0.5 * Math.sin(18.0 * (this.m_vPosition[0] + 2.0 * this.m_vPosition[1]))), 0.0) * WIND.g_fTime;
-        const fRealFade = UTILS.LerpHermite3(0.0, 1.001, UTILS.Clamp(this.m_fFade * 0.5, 0.0, 1.0));
+        this.m_fFade   += Math.max(this.m_fFadeMove - 0.7 * (vec2.len(this.m_vPosition) - 0.2) - 0.8 * (0.5 + 0.5 * Math.sin(18.0 * (this.m_vPosition[0] + 2.0 * this.m_vPosition[1]))), 0.0) * WIND.g_fTime * 0.5;
+        const fRealFade = UTILS.LerpHermite3(0.0, 1.001, Math.min(this.m_fFade, 1.0));
 
         this.m_vPosition[2] = 60.0 * fRealFade;
         this.m_vColor[3]    = 1.0 - 1.0 * fRealFade;
