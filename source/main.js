@@ -52,6 +52,7 @@ let g_bFinished     = false;
 let g_fFinishedTime = 0.0;
 
 let g_pMenuThanks = null;
+let g_pMenuName   = null;
 
 
 // ****************************************************************
@@ -85,6 +86,7 @@ APP.Init = function()
     }
 
     g_pMenuThanks = document.getElementById("text-thanks");
+    g_pMenuName   = document.getElementById("text-name");
 
     vec3.set(g_vCamDir, 0.0, 1.0, 0.0);
 
@@ -121,7 +123,9 @@ APP.Render = function()
 // ****************************************************************
 APP.Move = function()
 {
-    UTILS.SetElementOpacity(WIND.g_pMenuHeader, UTILS.LerpHermite3(0.0, 1.0, UTILS.Clamp(2.5 - 0.7 * WIND.g_fTotalTime, 0.0, 1.0)));
+    const fIntro = UTILS.LerpHermite3(0.0, 1.0, UTILS.Clamp(1.8 - 0.3 * WIND.g_fTotalTime, 0.0, 1.0));
+    UTILS.SetElementOpacity(WIND.g_pMenuHeader, fIntro);
+    UTILS.SetElementOpacity(g_pMenuName,        fIntro);
 
     if(g_bFinished)
     {
@@ -133,8 +137,7 @@ APP.Move = function()
 
         g_pWorld.m_vColor[3] = UTILS.LerpHermite3(0.0, 1.0, Math.max(1.0 - g_fFinishedTime * 0.15, 0.0));
 
-        g_pMenuThanks.innerHTML = "<p>THANK YOU FOR PLAYING</p>";
-        UTILS.SetElementOpacity(g_pMenuThanks, UTILS.LerpHermite3(0.0, 1.0, UTILS.Clamp(g_fFinishedTime * 0.7 - 5.0, 0.0, 1.0)));
+        UTILS.SetElementOpacity(g_pMenuThanks, UTILS.LerpHermite3(0.0, 1.0, UTILS.Clamp(g_fFinishedTime * 0.3 - 2.3, 0.0, 1.0)));
     }
     else if(g_bDrag)
     {
@@ -299,6 +302,9 @@ APP.Resize = function(sWidth, sMargin)
 {
     g_pMenuThanks.style.width      = sWidth;
     g_pMenuThanks.style.marginLeft = sMargin;
+
+    g_pMenuName.style.width      = sWidth;
+    g_pMenuName.style.marginLeft = sMargin;
 };
 
 
