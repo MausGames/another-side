@@ -10,6 +10,11 @@ Another Side is a **minimalist puzzle cube** made in less than sixteen hours on 
 
 #
 
+**Browser Version:**  
+<https://mausgames.itch.io/another-side>
+
+#
+
 <table>
     <tr>
         <td><a href="material/screenshots/ans_screen_001.jpg?raw=true"><img src="material/screenshots/ans_screen_001t.jpg" /></a></td>
