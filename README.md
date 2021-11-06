@@ -13,6 +13,10 @@ Another Side is a **minimalist puzzle cube** made in less than sixteen hours on 
 **Browser Version:**  
 <https://mausgames.itch.io/another-side>
 
+**Music:**  
+by Kevin MacLeod (<https://incompetech.com/music/royalty-free/index.html?genre=Contemporary>)  
+Licensed under CC BY (<https://creativecommons.org/licenses/by/4.0/>)
+
 #
 
 <table>
