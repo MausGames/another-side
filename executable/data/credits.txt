@@ -15,10 +15,10 @@ People
 Resources
 
 Music
-- Kevin MacLeod : Immersed (CC BY)
+- Kevin MacLeod : Immersed : music/Immersed.* (CC BY)
 
 Fonts
-- Google : Noto Sans (OFL)
+- Google : Noto Sans : fonts/default.* (OFL)
 
 
 -------------------------------------------------------------------
