@@ -1,0 +1,4 @@
+[lfs]
+url = https://gitlab.com/MausGames/another-side.git/info/lfs
+pushurl = ssh://git@gitlab.com/MausGames/another-side.git
+locksverify = false
