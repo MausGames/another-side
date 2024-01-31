@@ -54,6 +54,8 @@ let g_fFinishedTime = 0.0;
 let g_pMenuThanks = null;
 let g_pMenuName   = null;
 
+let g_pClickSound = null;
+
 
 // ****************************************************************
 APP.Init = function()
@@ -72,8 +74,8 @@ APP.Init = function()
             const iType = cLevel[i].aiValue[j];
 
             g_aapBlock[i][j] = new cBlock();
-            g_aapBlock[i][j].m_vPosition[0] = -0.3 * (          (j % BLOCK_LINE) - 5.5);
-            g_aapBlock[i][j].m_vPosition[1] =  0.3 * (Math.floor(j / BLOCK_LINE) - 5.5);
+            g_aapBlock[i][j].m_vPosition[0] = -0.3 * (            (j % BLOCK_LINE) - 5.5);
+            g_aapBlock[i][j].m_vPosition[1] =  0.3 * (UTILS.ToUint(j / BLOCK_LINE) - 5.5);
 
             if(iType)
             {
@@ -87,6 +89,9 @@ APP.Init = function()
 
     g_pMenuThanks = document.getElementById("text-thanks");
     g_pMenuName   = document.getElementById("text-name");
+
+    g_pClickSound = new windSound().Load("data/sounds/click.wav");
+    g_pClickSound.SetVolume(0.3);
 
     vec3.set(g_vCamDir, 0.0, 1.0, 0.0);
 

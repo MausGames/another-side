@@ -44,7 +44,7 @@ cLevel[LVL].pFunction = function(aBlock)
         if(pBlock.m_bClicked && (pBlock.m_iType >= 4))
         {
             const x = i % BLOCK_LINE;
-            const y = Math.floor(i / BLOCK_LINE);
+            const y = UTILS.ToUint(i / BLOCK_LINE);
 
             for(let j = x - 2; j <= x + 2; ++j)
             {
@@ -59,6 +59,8 @@ cLevel[LVL].pFunction = function(aBlock)
                     }
                 }
             }
+
+            g_pClickSound.Play();
 
             break;
         }
@@ -131,6 +133,8 @@ cLevel[LVL].pFunction = function(aBlock)
                 }
             }
 
+            if((pBlock.m_iType === 1) || (pBlock.m_iType === 2)) g_pClickSound.Play();
+
             break;
         }
     }
@@ -189,6 +193,8 @@ cLevel[LVL].pFunction = function(aBlock)
                 }
             }
 
+            g_pClickSound.Play();
+
             break;
         }
     }
@@ -227,7 +233,7 @@ cLevel[LVL].pFunction = function(aBlock)
         if(pBlock.m_bClicked)
         {
             const x = i % BLOCK_LINE;
-            const y = Math.floor(i / BLOCK_LINE);
+            const y = UTILS.ToUint(i / BLOCK_LINE);
 
             const iIndexX = this.aiStart.indexOf(x);
             const iIndexY = this.aiStart.indexOf(y);
@@ -268,6 +274,8 @@ cLevel[LVL].pFunction = function(aBlock)
                     break;
                 }
             }
+
+            if((iIndexX >= 0) || (iIndexY >= 0)) g_pClickSound.Play();
 
             break;
         }
@@ -323,8 +331,8 @@ cLevel[LVL].pFunction = function(aBlock)
 
                 if(aBlock[iTarget + iDir].m_iType === 2) this.bDone = true;
 
-                const iCol1 =           ((i - iDir) % BLOCK_LINE);
-                const iRow1 = Math.floor((i - iDir) / BLOCK_LINE);
+                const iCol1 =             ((i - iDir) % BLOCK_LINE);
+                const iRow1 = UTILS.ToUint((i - iDir) / BLOCK_LINE);
 
                 for(let j = iCol1 - 1; j <= iCol1 + 1; ++j)
                 {
@@ -343,8 +351,8 @@ cLevel[LVL].pFunction = function(aBlock)
                 aBlock[iTarget].SetType(2);
                 aBlock[iTarget].m_bActive = true;
 
-                const iCol2 =           (iTarget % BLOCK_LINE);
-                const iRow2 = Math.floor(iTarget / BLOCK_LINE);
+                const iCol2 =             (iTarget % BLOCK_LINE);
+                const iRow2 = UTILS.ToUint(iTarget / BLOCK_LINE);
 
                 for(let j = iCol2 - 1; j <= iCol2 + 1; ++j)
                 {
@@ -362,6 +370,8 @@ cLevel[LVL].pFunction = function(aBlock)
                         }
                     }
                 }
+
+                g_pClickSound.Play();
             }
 
             break;
@@ -437,6 +447,8 @@ cLevel[LVL].pFunction = function(aBlock)
                         }
                     }
                 }
+
+                g_pClickSound.Play();
             }
 
             break;
