@@ -116,6 +116,8 @@ cLevel[LVL].pFunction = function(aBlock)
                     aBlock[j].SetType(this.aiValue[j]);
 
                 this.iFindCount = 0;
+
+                g_pClickSound.Play();
             }
             else if(pBlock.m_iType === 2)
             {
@@ -131,9 +133,9 @@ cLevel[LVL].pFunction = function(aBlock)
                 {
                     this.bDone = true;
                 }
-            }
 
-            if((pBlock.m_iType === 1) || (pBlock.m_iType === 2)) g_pClickSound.Play();
+                g_pClickSound.Play();
+            }
 
             break;
         }
