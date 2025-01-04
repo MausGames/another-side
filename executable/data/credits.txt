@@ -18,6 +18,7 @@ Music
 - Kevin MacLeod : Immersed : music/Immersed.* (CC BY)
 
 Fonts
+- daredemotypo : Nikkyou Sans : fonts/nikkyou.* (freeware)
 - Google : Noto Sans : fonts/default.* (OFL)
 
 
