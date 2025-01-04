@@ -37,8 +37,9 @@ const SIDES      = 6;
 const BLOCK_LINE = 12;
 const BLOCK_ALL  = BLOCK_LINE * BLOCK_LINE;
 
-let g_pWorld   = null;
-let g_aapBlock = new Array(SIDES);
+let g_pBackground = null;
+let g_pWorld      = null;
+let g_aapBlock    = new Array(SIDES);
 
 let g_mSideTransform = mat4.create();
 let g_avSideNormal   = new Array(SIDES);
@@ -60,10 +61,12 @@ let g_pClickSound = null;
 // ****************************************************************
 APP.Init = function()
 {
-    cWorld.Init();
-    cBlock.Init();
+    cBackground.Init();
+    cWorld     .Init();
+    cBlock     .Init();
 
-    g_pWorld = new cWorld();
+    g_pBackground = new cBackground();
+    g_pWorld      = new cWorld();
 
     for(let i = 0; i < SIDES; ++i)
     {
@@ -109,15 +112,17 @@ APP.Init = function()
 // ****************************************************************
 APP.Exit = function()
 {
-    cWorld.Exit();
-    cBlock.Exit();
+    cBackground.Exit();
+    cWorld     .Exit();
+    cBlock     .Exit();
 };
 
 
 // ****************************************************************
 APP.Render = function()
 {
-    g_pWorld.Render();
+    g_pBackground.Render();
+    g_pWorld     .Render();
 
     for(let i = 0; i < SIDES; ++i)
     {

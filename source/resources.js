@@ -86,3 +86,33 @@ RES.cWorld.s_sFragmentShader =
 ""                                                                                               +
 "    gl_FragColor = vec4(u_v4Color.rgb*v1Intensity + vec3(coreDither() / 100.0), u_v4Color.a);"  +
 "}";
+
+
+// ****************************************************************
+RES.cBackground = {};
+RES.cBackground.s_afVertexData =
+[-35.0, -35.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+ -35.0,  35.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+  35.0, -35.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+  35.0,  35.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0];
+
+RES.cBackground.s_aiIndexData =
+[0, 2, 1, 1, 2, 3];
+
+RES.cBackground.s_sVertexShader =
+"varying vec2 v_v2Relative;"                  +
+""                                            +
+"void main()"                                 +
+"{"                                           +
+"    gl_Position  = vec4(a_v3Position, 1.0);" +
+"    v_v2Relative = a_v3Position.xy * 0.5;"   +
+"}";
+
+RES.cBackground.s_sFragmentShader =
+"varying vec2 v_v2Relative;"                                                   +
+""                                                                             +
+"void main()"                                                                  +
+"{"                                                                            +
+"    float v1Intensity = (1.0 - 1.1 * dot(v_v2Relative, v_v2Relative)) * 0.1;" +
+"    gl_FragColor      = vec4(vec3(v1Intensity + coreDither() / 50.0), 1.0);"  +
+"}";
