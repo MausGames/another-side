@@ -1,5 +1,6 @@
 # Another Side
 
+[![engine: wind](material/readme/badge_engine.svg)](https://github.com/MausGames/wind-engine)
 [![software license: zlib](material/readme/badge_license_software.svg)](LICENSE.txt)
 [![content license: CC BY](material/readme/badge_license_content.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![credits.txt](material/readme/badge_credits.svg)](executable/data/credits.txt)
@@ -8,16 +9,15 @@ An endless space of nothingness, a single shape of light. Can you solve the myst
 
 Another Side is a **minimalist puzzle cube** made in less than sixteen hours on two [Mi'pu'mi][1] days with the jam theme "clickbait".
 
-#
+## Links
 
 **Browser Version:**  
 <https://mausgames.itch.io/another-side>
 
 **Music:**  
-by Kevin MacLeod (<https://incompetech.com>)  
-Licensed under CC BY (<https://creativecommons.org/licenses/by/4.0/>)
+by [Kevin MacLeod](https://incompetech.com) licensed under [CC BY](https://creativecommons.org/licenses/by/4.0/)
 
-#
+<br>
 
 <table>
     <tr>
