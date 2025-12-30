@@ -7,22 +7,22 @@
 //*-----------------------------------------------*//
 /////////////////////////////////////////////////////
 "use strict";
-class cBackground extends windObject {
+class CBackground extends windObject {
 
 
 // ****************************************************************
 static Init()
 {
-    cBackground.s_pModel  = new windModel ().Create(RES.cBackground.s_afVertexData,  RES.cBackground.s_aiIndexData);
-    cBackground.s_pShader = new windShader().Create(RES.cBackground.s_sVertexShader, RES.cBackground.s_sFragmentShader);
+    CBackground.s_pModel  = new windModel ().Create(RES.CBackground.s_afVertexData,  RES.CBackground.s_aiIndexData);
+    CBackground.s_pShader = new windShader().Create(RES.CBackground.s_sVertexShader, RES.CBackground.s_sFragmentShader);
 }
 
 
 // ****************************************************************
 static Exit()
 {
-    cBackground.s_pModel .Destructor();
-    cBackground.s_pShader.Destructor();
+    CBackground.s_pModel .Destructor();
+    CBackground.s_pShader.Destructor();
 }
 
 
@@ -31,8 +31,8 @@ constructor()
 {
     super();
 
-    this.m_pModel  = cBackground.s_pModel;
-    this.m_pShader = cBackground.s_pShader;
+    this.m_pModel  = CBackground.s_pModel;
+    this.m_pShader = CBackground.s_pShader;
 }
 
 
@@ -45,4 +45,4 @@ Render()
 }
 
 
-} // class cBackground
+} // class CBackground

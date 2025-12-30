@@ -11,8 +11,8 @@ const RES = {};
 
 
 // ****************************************************************
-RES.cBlock = {};
-RES.cBlock.s_afVertexData =
+RES.CBlock = {};
+RES.CBlock.s_afVertexData =
 [-1.0, -1.0, -1.0,  0.0,  0.0, -1.00000,  0.00000,  0.00000,
  -1.0, -1.0,  1.0,  0.0,  0.0, -1.00000,  0.00000,  0.00000,
  -1.0,  1.0, -1.0,  0.0,  0.0, -1.00000,  0.00000,  0.00000,
@@ -38,10 +38,10 @@ RES.cBlock.s_afVertexData =
   1.0, -1.0,  1.0,  0.0,  0.0,  0.00000,  0.00000,  1.00000,
   1.0,  1.0,  1.0,  0.0,  0.0,  0.00000,  0.00000,  1.00000];
 
-RES.cBlock.s_aiIndexData =
+RES.CBlock.s_aiIndexData =
 [0, 1, 2, 3, 2, 1, 4, 6, 5, 7, 5, 6, 8, 10, 9, 11, 9, 10, 12, 13, 14, 15, 14, 13, 16, 17, 18, 19, 18, 17, 20, 22, 21, 23, 21, 22];
 
-RES.cBlock.s_sVertexShader =
+RES.CBlock.s_sVertexShader =
 "varying vec3 v_v3Relative;"                                        +
 "varying vec3 v_v3Position;"                                        +
 ""                                                                  +
@@ -53,7 +53,7 @@ RES.cBlock.s_sVertexShader =
 "    gl_Position = u_m4ModelViewProj * vec4(a_v3Position, 1.0);"    +
 "}";
 
-RES.cBlock.s_sFragmentShader =
+RES.CBlock.s_sFragmentShader =
 "varying vec3 v_v3Relative;"                                                                    +
 "varying vec3 v_v3Position;"                                                                    +
 ""                                                                                              +
@@ -73,8 +73,8 @@ RES.cBlock.s_sFragmentShader =
 
 
 // ****************************************************************
-RES.cWorld = {};
-RES.cWorld.s_sFragmentShader =
+RES.CWorld = {};
+RES.CWorld.s_sFragmentShader =
 "varying vec3 v_v3Relative;"                                                                     +
 ""                                                                                               +
 "void main()"                                                                                    +
@@ -89,17 +89,17 @@ RES.cWorld.s_sFragmentShader =
 
 
 // ****************************************************************
-RES.cBackground = {};
-RES.cBackground.s_afVertexData =
+RES.CBackground = {};
+RES.CBackground.s_afVertexData =
 [-35.0, -35.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
  -35.0,  35.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
   35.0, -35.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
   35.0,  35.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0];
 
-RES.cBackground.s_aiIndexData =
+RES.CBackground.s_aiIndexData =
 [0, 2, 1, 1, 2, 3];
 
-RES.cBackground.s_sVertexShader =
+RES.CBackground.s_sVertexShader =
 "varying vec2 v_v2Relative;"                  +
 ""                                            +
 "void main()"                                 +
@@ -108,7 +108,7 @@ RES.cBackground.s_sVertexShader =
 "    v_v2Relative = a_v3Position.xy * 0.5;"   +
 "}";
 
-RES.cBackground.s_sFragmentShader =
+RES.CBackground.s_sFragmentShader =
 "varying vec2 v_v2Relative;"                                                   +
 ""                                                                             +
 "void main()"                                                                  +

@@ -7,22 +7,22 @@
 //*--------------------------------------------------*//
 ////////////////////////////////////////////////////////
 "use strict";
-class cWorld extends windObject {
+class CWorld extends windObject {
 
 
 // ****************************************************************
 static Init()
 {
-    cWorld.s_pModel  = new windModel ().Create(RES.cBlock.s_afVertexData,  RES.cBlock.s_aiIndexData);
-    cWorld.s_pShader = new windShader().Create(RES.cBlock.s_sVertexShader, RES.cWorld.s_sFragmentShader);
+    CWorld.s_pModel  = new windModel ().Create(RES.CBlock.s_afVertexData,  RES.CBlock.s_aiIndexData);
+    CWorld.s_pShader = new windShader().Create(RES.CBlock.s_sVertexShader, RES.CWorld.s_sFragmentShader);
 }
 
 
 // ****************************************************************
 static Exit()
 {
-    cWorld.s_pModel .Destructor();
-    cWorld.s_pShader.Destructor();
+    CWorld.s_pModel .Destructor();
+    CWorld.s_pShader.Destructor();
 }
 
 
@@ -33,9 +33,9 @@ constructor()
 
     vec3.set(this.m_vSize,  2.0,  2.0,  2.0);
     vec4.set(this.m_vColor, 0.65, 0.65, 0.65, 1.0);
-    this.m_pModel  = cWorld.s_pModel;
-    this.m_pShader = cWorld.s_pShader;
+    this.m_pModel  = CWorld.s_pModel;
+    this.m_pShader = CWorld.s_pShader;
 }
 
 
-} // class cWorld
+} // class CWorld

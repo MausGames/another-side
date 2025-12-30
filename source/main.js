@@ -61,12 +61,12 @@ let g_pClickSound = null;
 // ****************************************************************
 APP.Init = function()
 {
-    cBackground.Init();
-    cWorld     .Init();
-    cBlock     .Init();
+    CBackground.Init();
+    CWorld     .Init();
+    CBlock     .Init();
 
-    g_pBackground = new cBackground();
-    g_pWorld      = new cWorld();
+    g_pBackground = new CBackground();
+    g_pWorld      = new CWorld();
 
     for(let i = 0; i < SIDES; ++i)
     {
@@ -74,9 +74,9 @@ APP.Init = function()
 
         for(let j = 0; j < BLOCK_ALL; ++j)
         {
-            const iType = cLevel[i].aiValue[j];
+            const iType = g_aLevel[i].aiValue[j];
 
-            g_aapBlock[i][j] = new cBlock();
+            g_aapBlock[i][j] = new CBlock();
             g_aapBlock[i][j].m_vPosition[0] = -0.3 * (            (j % BLOCK_LINE) - 5.5);
             g_aapBlock[i][j].m_vPosition[1] =  0.3 * (UTILS.ToUint(j / BLOCK_LINE) - 5.5);
 
@@ -112,9 +112,9 @@ APP.Init = function()
 // ****************************************************************
 APP.Exit = function()
 {
-    cBackground.Exit();
-    cWorld     .Exit();
-    cBlock     .Exit();
+    CBackground.Exit();
+    CWorld     .Exit();
+    CBlock     .Exit();
 };
 
 
@@ -186,9 +186,9 @@ APP.Move = function()
     g_bFinished = true;
     for(let i = 0; i < SIDES; ++i)
     {
-        if(!cLevel[i].bDone)
+        if(!g_aLevel[i].bDone)
         {
-            cLevel[i].pFunction(g_aapBlock[i]);
+            g_aLevel[i].nFunction(g_aapBlock[i]);
             g_bFinished = false;
         }
         else
@@ -265,7 +265,7 @@ APP.KeyDown = function(iKey)
     {
         for(let i = 0; i < SIDES; ++i)
         {
-            cLevel[i].bDone = true;
+            g_aLevel[i].bDone = true;
         }
     }
 };

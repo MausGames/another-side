@@ -7,22 +7,22 @@
 //*--------------------------------------------------*//
 ////////////////////////////////////////////////////////
 "use strict";
-class cBlock extends windObject {
+class CBlock extends windObject {
 
 
 // ****************************************************************
 static Init()
 {
-    cBlock.s_pModel  = new windModel ().Create(RES.cBlock.s_afVertexData,  RES.cBlock.s_aiIndexData);
-    cBlock.s_pShader = new windShader().Create(RES.cBlock.s_sVertexShader, RES.cBlock.s_sFragmentShader);
+    CBlock.s_pModel  = new windModel ().Create(RES.CBlock.s_afVertexData,  RES.CBlock.s_aiIndexData);
+    CBlock.s_pShader = new windShader().Create(RES.CBlock.s_sVertexShader, RES.CBlock.s_sFragmentShader);
 }
 
 
 // ****************************************************************
 static Exit()
 {
-    cBlock.s_pModel .Destructor();
-    cBlock.s_pShader.Destructor();
+    CBlock.s_pModel .Destructor();
+    CBlock.s_pShader.Destructor();
 }
 
 
@@ -31,8 +31,8 @@ constructor()
 {
     super();
 
-    this.m_pModel    = cBlock.s_pModel;
-    this.m_pShader   = cBlock.s_pShader;
+    this.m_pModel    = CBlock.s_pModel;
+    this.m_pShader   = CBlock.s_pShader;
 
     this.m_bActive   = false;
     this.m_bClicked  = false;
@@ -111,4 +111,4 @@ SetType(iType)
 }
 
 
-} // class cBlock
+} // class CBlock
