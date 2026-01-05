@@ -175,7 +175,7 @@ APP.Move = function()
     vec3.transformMat4(g_vCamDir,              g_vCamDir,              WIND.M);
     vec3.transformMat4(WIND.g_vCamOrientation, WIND.g_vCamOrientation, WIND.M);
 
-    const fBreak = 1.0 - WIND.g_fTime * ((!g_bFinished && g_bDrag) ? 10.0 : 1.0);
+    const fBreak = UTILS.Friction(((!g_bFinished && g_bDrag) ? 11.0 : 1.0), WIND.g_fTime);
     vec2.scale(g_vMouseForce, g_vMouseForce, fBreak);
 
     const fDistance = 6.0 + Math.min(g_fFinishedTime, 10.0);
