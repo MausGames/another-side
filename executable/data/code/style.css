@@ -4,6 +4,7 @@
     font-family: 'nikkyou';
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
     src: url('../fonts/nikkyou.woff2') format('woff2'),
          url('../fonts/nikkyou.woff') format('woff'),
          url('../fonts/nikkyou.ttf') format('truetype');
